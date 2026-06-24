@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const progressContainer = document.getElementById('progress');
 
-    const response = await fetch('tracker-examples.json');
+    const response = await fetch('tracker.json');
     const data = await response.json();
 
     const table = document.createElement('table');
