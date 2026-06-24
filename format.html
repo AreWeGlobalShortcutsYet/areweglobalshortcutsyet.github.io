@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Are We GlobalShortcuts Yet?</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <h1 class="glow" id="title">Are We <a href="/">GlobalShortcuts</a> Yet?</h1>
+                <h2 class="glow" id="subtitle">Tracking GlobalShortcuts integration progress.</h2>
+            </div>
+        </div>
+        <div id="content">
+            <p class="description">
+                Helper tool for formatting tracker data for <a href="#contrib">pull requests</a>.
+            </p>
+
+            <div id="formatter" class="section">
+                <button id="btn-new">New</button>
+                <select id="app-selector">
+                    <option value="">Edit</option>
+                </select>
+            </div>
+
+            <div id="editor" class="section">
+                <h1 id="editor-title">Add Application</h1>
+                <div class="editor-form">
+                    <p>ID: </p><input type="text" id="field-id">
+                    <p>Name*: </p><input type="text" id="field-name" required>
+                    <p>URL*: </p><input type="url" id="field-url" required>
+                    <p>Tracking Issue: </p><input type="text" id="field-issue">
+                    <p>Pull Request: </p><input type="text" id="field-pr">
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="field-wip"><p> WIP</p>
+                        <input type="checkbox" id="field-testing"><p> Testing</p>
+                        <input type="checkbox" id="field-done"><p> Done</p>
+                        <input type="checkbox" id="field-declined"><p> Declined</p>
+                    </div>
+
+                    <button id="btn-submit">Save to JSON</button>
+                    <button id="btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+            <div id="output-container" class="section">
+                <h1>Resulting JSON</h1>
+                <textarea id="json-result"></textarea>
+                <div class="copy-wrapper">
+                    <button id="btn-copy">Copy JSON</button>
+                </div>
+            </div>
+
+            <div id="contrib" class="section">
+                <h1>Submit an Application or Update</h1>
+                <p id="contrib-text">
+                    Source available on <a href="https://github.com/AreWeGlobalShortcutsYet/areweglobalshortcutsyet.github.io" target="_blank">GitHub</a>.
+                    Help us keep this current by submitting a pull request to fix inaccuracies or add new applications.
+                    If you're not familiar with JSON there's also a formatting tool available <a href="/format.html">here</a>.
+                </p>
+                <div id="contrib-steps">
+                    <p>1. <span>Fork</span> this repository to your own GitHub account.</p>
+                    <p>2. <span>Edit tracker.json</span> with updated information or a new application.</p>
+                    <p>3. <span>Commit</span> your changes with a brief description of what you updated.</p>
+                    <p>4. <span>Submit a Pull Request</span> from your fork back to the main project for review.</p>
+                </div>
+            </div>
+        </div>
+        <script src="script/format.js"></script>
+    </body>
+</html>
