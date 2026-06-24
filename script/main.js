@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
         row.innerHTML = `  
             <td><a href="${app.url}" target="_blank">${app.name}</a></td>  
-            <td class="emoji-cell"><a href="${app.tracking_issue}">${app.emoji}</a></td>  
+            <td class="emoji-cell"><a href="${app.tracking_issue}" target="_blank">${app.emoji}</a></td>  
             <td>  
                 <div class="progress-bg">  
                     <div class="progress-fill" style="width: ${app.percentage}%"></div>  
