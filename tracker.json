@@ -2,7 +2,8 @@
     "mumble": {
         "name": "Mumble",
         "url": "https://www.mumble.info/",
-        "tracking_issue": "https://github.com/mumble-voip/mumble/issues/5257"
+        "tracking_issue": "https://github.com/mumble-voip/mumble/issues/5257",
+        "pull_request": "https://github.com/mumble-voip/mumble/pull/5976"
     },
 
     "keepassxc": {
