@@ -48,6 +48,7 @@
         "url": "https://tauri.app/",
         "tracking_issue": "https://github.com/tauri-apps/global-hotkey/issues/28",
         "pull_request": "https://github.com/tauri-apps/global-hotkey/pull/172",
-        "wip": true
+        "wip": true,
+        "testing": true
     }
 }
