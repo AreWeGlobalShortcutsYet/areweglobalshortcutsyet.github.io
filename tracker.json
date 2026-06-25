@@ -15,12 +15,12 @@
         "done": true
     },
 
-    "vencord": {
-        "name": "Vencord",
-        "url": "https://vencord.dev/",
+    "vesktop": {
+        "name": "Vesktop",
+        "url": "https://vesktop.dev/",
         "tracking_issue": "https://github.com/Vencord/Vesktop/issues/18",
-        "pull_request": "https://github.com/Vencord/Vesktop/pull/326",
-        "declined": true
+        "pull_request": "https://github.com/Vencord/Vesktop/pull/1238",
+        "wip": true
     },
 
     "ulauncher": {
