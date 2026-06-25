@@ -75,6 +75,12 @@
         "done": true
     },
 
+    "cosmic": {
+        "name": "Cosmic",
+        "url": "https://system76.com/cosmic",
+        "tracking_issue": "https://github.com/pop-os/xdg-desktop-portal-cosmic/issues/4"
+    },
+
     "chromium": {
         "name": "Chromium",
         "url": "https://www.chromium.org/Home/",
