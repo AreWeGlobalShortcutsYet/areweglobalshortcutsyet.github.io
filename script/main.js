@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <thead>
             <tr>
                 <th>App</th>
-                <th>Reference</th>
+                <th>Status</th>
                 <th>Progress</th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const tbody = table.querySelector('tbody');
 
-    const processedData = Object.values(data).map(app => {
+    const processedData = Object.entries(data).map(([id, app]) => {
         let percentage = 0.01;
         if (app.progress) percentage = app.progress;
         else if (app.declined) percentage = 0;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         else if (app.pull_request) referenceText = 'PR ' + emoji;
         else if (app.tracking_issue) referenceText = 'Issue ' + emoji;
         
-        return { ...app, percentage, referenceText, reference };
+        return { ...app, id, percentage, referenceText, reference };
     });
 
     processedData.sort((a, b) => b.percentage - a.percentage);
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-            <td><a href="${app.url}" target="_blank">${app.name}</a></td>
-            <td class="reference-cell"><a href="${app.reference || "#"}" target="_blank">${app.referenceText}</a></td>
+            <td><a href="#" class="details-toggle">${app.name} <span class="details-carrot">⌄</span></a></td>
+            <td><a href="${app.reference || "#"}" target="_blank">${app.referenceText}</a></td>
             <td>
                 <div class="progress-bg">
                     <div class="progress-fill" style="width: ${app.percentage}%"></div>
@@ -68,6 +68,70 @@ document.addEventListener('DOMContentLoaded', async () => {
             </td>
         `;
         tbody.appendChild(row);
+
+        const toggleLink = row.querySelector('.details-toggle');
+        toggleLink.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const carrot = toggleLink.querySelector('.details-carrot');
+            carrot.classList.toggle('flipped');
+
+            const detailsRows = document.querySelectorAll(`.details-${app.id}`);
+            
+            detailsRows.forEach(detailRow => {
+                if (detailRow.style.display === 'table-row') {
+                    detailRow.style.display = 'none';
+                } else {
+                    detailRow.style.display = 'table-row';
+                }
+            });
+        });
+
+        const homepage = document.createElement('tr');
+        homepage.classList.add("details", "details-" + app.id);
+
+        homepage.innerHTML = `
+            <td>Home </td><td colspan="2"><a href="${app.url}" target="_blank">${app.url}</a></td>
+        `;
+        tbody.appendChild(homepage);
+
+        let bottomRow = homepage;
+
+        if (app.tracking_issue) {
+            const issue = document.createElement('tr');
+            issue.classList.add("details", "details-" + app.id);
+    
+            issue.innerHTML = `
+                <td>Issue </td><td colspan="2"><a href="${app.tracking_issue}" target="_blank">${app.tracking_issue}</a></td>
+            `;
+            tbody.appendChild(issue);
+            bottomRow = issue;
+        }
+
+        if (app.pull_request) {
+            const pr = document.createElement('tr');
+            pr.classList.add("details", "details-" + app.id);
+    
+            pr.innerHTML = `
+                <td>PR </td><td colspan="2"><a href="${app.pull_request}" target="_blank">${app.pull_request}</a></td>
+            `;
+            tbody.appendChild(pr);
+            bottomRow = pr;
+        }
+
+        if (app.reference_url) {
+            const ref = document.createElement('tr');
+            ref.classList.add("details", "details-" + app.id);
+    
+            ref.innerHTML = `
+                <td>Extra </td><td colspan="2"><a href="${app.reference_url}" target="_blank">${app.reference_url}</a></td>
+            `;
+            tbody.appendChild(ref);
+            bottomRow = ref;
+        }
+
+        bottomRow.classList.add('details-bottom-row')
+
     });
 
     progressContainer.appendChild(table);

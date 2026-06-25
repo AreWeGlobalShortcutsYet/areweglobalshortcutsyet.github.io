@@ -15,6 +15,12 @@
     }
 }
 
+@media (max-width: 768px) {
+  .details-carrot {
+    display:none !important;
+  }
+}
+
 @font-face {
     font-family: ubuntu;
     src: url('../assets/fonts/Ubuntu-Regular.ttf') format('truetype');
@@ -152,28 +158,35 @@ a {
     background-color: color-mix(in srgb, var(--accent), transparent 90%);
     border-radius: 8px 8px 0 0;
     overflow: hidden;
+    table-layout: fixed;
 }
+
 .progress-table th, .progress-table td {
     padding: 12px 15px;
     border-bottom: 1px solid var(--fg);
 }
+
 .progress-table th {
     font-weight: 750;
     color: var(--accent-alt);
     text-transform: uppercase;
     font-size: 0.9rem;
 }
+
 .progress-table td a {
     color: var(--fg);
     text-decoration: none;
     font-weight: 500;
 }
+
 .progress-table td a:hover {
     color: var(--accent);
 }
+
 .refernce-cell {
     font-size: 1.2rem;
 }
+
 .progress-bg {
     background-color: var(--bg);
     border-radius: 8px;
@@ -184,10 +197,36 @@ a {
     overflow: hidden;
     margin-right: 8px;
 }
+
 .progress-fill {
     background: linear-gradient(45deg, var(--accent-alt) 20%, var(--accent) 80%);
     height: 100%;
-    transition: width 0.5s ease-in-out;
+}
+
+.details {
+    display: none;
+}
+
+.details-carrot {
+    display: inline-block;
+    transition: transform 0.267s ease-in-out;
+    transform: scaleY(-1);
+}
+
+.details-carrot.flipped {  
+    transform: scaleY(1);  
+}
+
+.details td:first-child {
+    padding-left: 2.5rem;
+}
+
+.details td {
+    border-bottom: 1px solid color-mix(var(--fg), transparent 50%);
+}
+
+.details-bottom-row {
+    border-bottom: 2px solid var(--fg);
 }
 
 #contrib-steps {
