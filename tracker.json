@@ -105,6 +105,12 @@
         "name": "xdg-desktop-portal-xapp",
         "url": "https://github.com/linuxmint/xdg-desktop-portal-xapp",
         "tracking_issue": "https://github.com/linuxmint/xdg-desktop-portal-xapp/issues/26"
-    }
+    },
 
+    "ghostty": {
+        "name": "Ghostty",
+        "url": "https://ghostty.org/",
+        "pull_request": "https://github.com/ghostty-org/ghostty/pull/7083",
+        "done": true
+    }
 }
