@@ -88,6 +88,12 @@
         "tracking_issue": "https://github.com/electron/electron/issues/51875",
         "reference_text": "Bug 🐛",
         "progress": 90
+    },
+
+    "xdg-desktop-portal-xapp": {
+        "name": "xdg-desktop-portal-xapp",
+        "url": "https://github.com/linuxmint/xdg-desktop-portal-xapp",
+        "tracking_issue": "https://github.com/linuxmint/xdg-desktop-portal-xapp/issues/26"
     }
 
 }
