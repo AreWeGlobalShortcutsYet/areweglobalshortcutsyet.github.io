@@ -87,46 +87,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-        const homepage = document.createElement('tr');
-        homepage.classList.add("details", "details-" + app.id);
-
-        homepage.innerHTML = `
-            <td>Home </td><td colspan="2"><a href="${app.url}" target="_blank">${app.url}</a></td>
-        `;
-        tbody.appendChild(homepage);
-
+        const homepage = addDetailEntry(tbody, "Home", app.url, app.id);
         let bottomRow = homepage;
 
         if (app.tracking_issue) {
-            const issue = document.createElement('tr');
-            issue.classList.add("details", "details-" + app.id);
-    
-            issue.innerHTML = `
-                <td>Issue </td><td colspan="2"><a href="${app.tracking_issue}" target="_blank">${app.tracking_issue}</a></td>
-            `;
-            tbody.appendChild(issue);
+            const issue = addDetailEntry(tbody, "Issue", app.tracking_issue, app.id);
             bottomRow = issue;
         }
 
         if (app.pull_request) {
-            const pr = document.createElement('tr');
-            pr.classList.add("details", "details-" + app.id);
-    
-            pr.innerHTML = `
-                <td>PR </td><td colspan="2"><a href="${app.pull_request}" target="_blank">${app.pull_request}</a></td>
-            `;
-            tbody.appendChild(pr);
+            const pr = addDetailEntry(tbody, "PR", app.pull_request, app.id);
             bottomRow = pr;
         }
 
         if (app.reference_url) {
-            const ref = document.createElement('tr');
-            ref.classList.add("details", "details-" + app.id);
-    
-            ref.innerHTML = `
-                <td>Extra </td><td colspan="2"><a href="${app.reference_url}" target="_blank">${app.reference_url}</a></td>
-            `;
-            tbody.appendChild(ref);
+            const ref = addDetailEntry(tbody, "Extra", app.reference_url, app.id);
             bottomRow = ref;
         }
 
@@ -136,3 +111,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     progressContainer.appendChild(table);
 });
+
+function addDetailEntry(tbody, name, url, id) {
+    const row = document.createElement('tr');
+    row.classList.add("details", "details-" + id);
+
+    row.innerHTML = `
+        <td>${name} </td><td colspan="2"><a class="details-link" href="${url}" target="_blank">${getReadableUrl(url)}</a></td>
+    `;
+    tbody.appendChild(row);
+    return row
+}
+
+function getReadableUrl(url) {
+    const urlObj = new URL(url);
+    return urlObj.hostname.replace('www.', '');
+}

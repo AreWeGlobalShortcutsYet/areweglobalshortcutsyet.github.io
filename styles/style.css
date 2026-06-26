@@ -207,6 +207,11 @@ a {
     display: none;
 }
 
+.details-link {
+    color: var(--accent) !important;
+    font-weight: 750 !important;
+}
+
 .details-carrot {
     display: inline-block;
     transition: transform 0.267s ease-in-out;
