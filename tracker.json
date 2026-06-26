@@ -112,5 +112,13 @@
         "url": "https://ghostty.org/",
         "pull_request": "https://github.com/ghostty-org/ghostty/pull/7083",
         "done": true
+    },
+
+    "easyeffects": {
+        "name": "easyeffects",
+        "url": "https://wwmm.github.io/easyeffects/",
+        "tracking_issue": "https://github.com/wwmm/easyeffects/issues/3834",
+        "reference_url": "https://github.com/wwmm/easyeffects/commits/master/src/global_shortcuts.cpp",
+        "done": true
     }
 }
