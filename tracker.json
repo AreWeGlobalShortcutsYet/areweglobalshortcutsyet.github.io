@@ -115,7 +115,7 @@
     },
 
     "easyeffects": {
-        "name": "easyeffects",
+        "name": "Easy Effects",
         "url": "https://wwmm.github.io/easyeffects/",
         "tracking_issue": "https://github.com/wwmm/easyeffects/issues/3834",
         "reference_url": "https://github.com/wwmm/easyeffects/commits/master/src/global_shortcuts.cpp",
