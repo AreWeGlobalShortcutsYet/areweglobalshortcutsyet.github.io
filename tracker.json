@@ -125,14 +125,13 @@
     "libportal": {
         "name": "libportal",
         "url": "https://libportal.org/",
-        "pull_request": "https://github.com/ghostty-org/ghostty/pull/7083",
+        "pull_request": "https://github.com/flatpak/libportal/pull/223",
         "wip": true
     },
 
     "deskflow": {
         "name": "Deskflow",
         "url": "https://deskflow.org/",
-        "pull_request": "https://github.com/deskflow/deskflow/pull/9858",
-        "wip": false
+        "pull_request": "https://github.com/deskflow/deskflow/pull/9858"
     }   
 }
