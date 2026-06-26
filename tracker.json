@@ -120,5 +120,19 @@
         "tracking_issue": "https://github.com/wwmm/easyeffects/issues/3834",
         "reference_url": "https://github.com/wwmm/easyeffects/commits/master/src/global_shortcuts.cpp",
         "done": true
-    }
+    },
+
+    "libportal": {
+        "name": "libportal",
+        "url": "https://libportal.org/",
+        "pull_request": "https://github.com/ghostty-org/ghostty/pull/7083",
+        "wip": true
+    },
+
+    "deskflow": {
+        "name": "Deskflow",
+        "url": "https://deskflow.org/",
+        "pull_request": "https://github.com/deskflow/deskflow/pull/9858",
+        "wip": false
+    }   
 }
