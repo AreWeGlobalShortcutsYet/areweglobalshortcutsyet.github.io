@@ -132,6 +132,7 @@
     "deskflow": {
         "name": "Deskflow",
         "url": "https://deskflow.org/",
-        "pull_request": "https://github.com/deskflow/deskflow/pull/9858"
+        "pull_request": "https://github.com/deskflow/deskflow/pull/9858",
+        "wip": true
     }   
 }
