@@ -125,7 +125,7 @@
     "libportal": {
         "name": "libportal",
         "url": "https://libportal.org/",
-        "pull_request": "https://github.com/flatpak/libportal/pull/223",
+        "pull_request": "https://github.com/flatpak/libportal/pull/226",
         "wip": true
     },
 
